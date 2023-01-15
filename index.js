@@ -48,11 +48,6 @@ app.post('/api/users', (req, res) => {
     _id: user1._id,
     username: user1.username
   })
-  //res.json(user1)
-  
-  // let username = {username:req.body.username, _id:id}
-  // arr.push(username)
-  // res.json(username)
 })
 
 app.get('/api/users', (req, res) =>{
@@ -77,7 +72,6 @@ app.post('/api/users/:id/exercises', (req, res) =>{
       date: exercise1.date,
     }
   )
-  //res.json({_id: req.params.id, username:name, date:correctDate.toDateString(), duration:parseInt(req.body.duration), description:req.body.description})
 })
 
 app.get('/api/users/:id/logs', (req, res) =>{
@@ -100,9 +94,6 @@ app.get('/api/users/:id/logs', (req, res) =>{
     }
   }
   
-  // console.log(new Date(currentUser.log[0].date))
-  // console.log(from)
-  // console.log(new Date(currentUser.log[0].date) > from)
    res.send({
     id_: currentUser._id,
     username: currentUser.username,
@@ -110,13 +101,6 @@ app.get('/api/users/:id/logs', (req, res) =>{
     log: filteredLog
    }
   )
-    // .log.filter(obj =>{
-    //   return obj.date >= req.query.from && obj.date <= req.query.to
-    // })
-
-  // res.send(arr.find(obj =>{
-  //   return obj._id === req.params.id
-  // }))
   })
 
 app.listen(10000)
